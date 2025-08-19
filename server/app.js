@@ -52,7 +52,9 @@ app.get('/api/health', (req, res) => {
     environment: process.env.NODE_ENV || 'development'
   });
 });
-
+app.get('/', (req, res) => {
+  res.send("server is running")
+});
 // API routes
 app.use('/api/forms', formRoutes);
 app.use('/api', submissionRoutes);
